@@ -52,9 +52,9 @@
       menu(){
         this.$router.push('/canteen/menu')
       },
-      statistics(){
-        this.$router.push('/canteen/statistics')
-      },
+      // statistics(){
+      //   this.$router.push('/canteen/statistics')
+      // },
       canteenInfo(){
         this.$router.push('/canteen/info')
       },

@@ -64,9 +64,11 @@ export default new Router({
       name:'MySettingsPage',
       component:MySettingsPage
     },
-
-
-
+    {
+      path:'',
+      name: 'LoginPage',
+      component: LoginPage
+    },
     {
       path:'/test',
       name:'Test',
