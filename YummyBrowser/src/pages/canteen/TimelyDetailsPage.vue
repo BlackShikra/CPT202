@@ -511,7 +511,7 @@ export default {
   },
   data(){
     return{
-      timeInterval:['2019-02-01','2019-02-03'],
+      timeInterval:['2022-04-01','2022-04-03'],
       timeData:'',
       cashData:'',
       typeData:'',
