@@ -38,22 +38,23 @@
           </div>
         </div>
         <Collapse simple class="content">
-          <Panel v-for="(item,index2) in day.infos" :name="getName(index1+'-',index2)" :key="getName(index1+'-',index2)">
+          <Panel v-for="(item,index2) in day.infos" :name="getName(index1+'-',index2)"
+                 :key="getName(index1+'-',index2)">
             <span v-if="item.state==='WaitingAccept'" style="background-color: #ed4014" class="type">新接单</span>
-            <span v-if="item.state==='Making'"style="background-color: #ed4099" class="type">制作中</span>
-            <span v-if="item.state==='WaitingDelivery'"style="background-color: #ff9900" class="type">待配送</span>
-            <span v-if="item.state==='Delivering'"style="background-color: aquamarine" class="type">配送中</span>
-            <span v-if="item.state==='Arrived'"style="background-color: #19be6b" class="type">已签收</span>
-            <span v-if="item.state==='Cancel'"style="background-color: #c5c8ce" class="type">已取消</span>
-            预定时间：{{getTime(new Date(item.validTimeBegin))}}&nbsp&nbsp&nbsp
-            订单编号：{{get8bitString(item.orderID)}}&nbsp&nbsp&nbsp
-            客户手机:{{item.customer.cell_phone}}&nbsp&nbsp&nbsp
-            客户地址：{{getAddress(item.customer.addresses[0])}}
+            <span v-if="item.state==='Making'" style="background-color: #ed4099" class="type">制作中</span>
+            <span v-if="item.state==='WaitingDelivery'" style="background-color: #ff9900" class="type">待配送</span>
+            <span v-if="item.state==='Delivering'" style="background-color: aquamarine" class="type">配送中</span>
+            <span v-if="item.state==='Arrived'" style="background-color: #19be6b" class="type">已签收</span>
+            <span v-if="item.state==='Cancel'" style="background-color: #c5c8ce" class="type">已取消</span>
+            预定时间：{{ getTime(new Date(item.validTimeBegin)) }}&nbsp&nbsp&nbsp
+            订单编号：{{ get8bitString(item.orderID) }}&nbsp&nbsp&nbsp
+            客户手机:{{ item.customer.cell_phone }}&nbsp&nbsp&nbsp
+            客户地址：{{ getAddress(item.customer.addresses[0]) }}
             <div slot="content">
               <table class="title">
                 <tr>
                   <th>配送员：</th>
-                  <td>{{item.deliveryID}}</td>
+                  <td>{{ item.deliveryID }}</td>
                   <th>配送时间：</th>
                   <td>{{item.predictTime}}</td>
                   <th>配送距离：</th>
@@ -120,20 +121,20 @@
         <Collapse simple class="content">
           <Panel v-for="(item,index2) in cashData.infos" :name="getName('cash-',index2)" :key="getName('cash-',index2)">
             <span v-if="item.state==='WaitingAccept'" style="background-color: #ed4014" class="type">新接单</span>
-            <span v-if="item.state==='Making'"style="background-color: #ed4099" class="type">制作中</span>
-            <span v-if="item.state==='WaitingDelivery'"style="background-color: #ff9900" class="type">待配送</span>
-            <span v-if="item.state==='Delivering'"style="background-color: aquamarine" class="type">配送中</span>
-            <span v-if="item.state==='Arrived'"style="background-color: #19be6b" class="type">已签收</span>
-            <span v-if="item.state==='Cancel'"style="background-color: #c5c8ce" class="type">已取消</span>
-            预定时间：{{getTime(new Date(item.validTimeBegin))}}&nbsp&nbsp&nbsp
-            订单编号：{{get8bitString(item.orderID)}}&nbsp&nbsp&nbsp
-            客户手机:{{item.customer.cell_phone}}&nbsp&nbsp&nbsp
-            客户地址：{{getAddress(item.customer.addresses[0])}}
+            <span v-if="item.state==='Making'" style="background-color: #ed4099" class="type">制作中</span>
+            <span v-if="item.state==='WaitingDelivery'" style="background-color: #ff9900" class="type">待配送</span>
+            <span v-if="item.state==='Delivering'" style="background-color: aquamarine" class="type">配送中</span>
+            <span v-if="item.state==='Arrived'" style="background-color: #19be6b" class="type">已签收</span>
+            <span v-if="item.state==='Cancel'" style="background-color: #c5c8ce" class="type">已取消</span>
+            预定时间：{{ getTime(new Date(item.validTimeBegin)) }}&nbsp&nbsp&nbsp
+            订单编号：{{ get8bitString(item.orderID) }}&nbsp&nbsp&nbsp
+            客户手机:{{ item.customer.cell_phone }}&nbsp&nbsp&nbsp
+            客户地址：{{ getAddress(item.customer.addresses[0]) }}
             <div slot="content">
               <table class="title">
                 <tr>
                   <th>配送员：</th>
-                  <td>{{item.deliveryID}}</td>
+                  <td>{{ item.deliveryID }}</td>
                   <th>配送时间：</th>
                   <td>{{item.predictTime}}</td>
                   <th>配送距离：</th>
@@ -494,19 +495,19 @@ import TitleMenu from '../../components/MenuColumn/CanteenMenu'
 export default {
   name: "CalculateStatisticsPage",
   components:{TitleMenu},
-  async mounted(){
-    var date=new Date()
-    var date1=date.getFullYear()+"-"+this.fixNumber(date.getMonth()+1)+"-01"
-    var date2=date.getFullYear()+"-"+this.fixNumber(date.getMonth()+1)+"-"+this.fixNumber(date.getDate())
-    this.timeInterval=[date1,date2]
-    await this.$axios.post('/server/order/canteen/get/time/orders',[sessionStorage.getItem("canteenID"),date1,date2]).then(re=>{
-      this.timeData=re.data;
+  async mounted() {
+    var date = new Date()
+    var date1 = date.getFullYear() + "-" + this.fixNumber(date.getMonth() + 1) + "-" + this.fixNumber(date.getDate())
+    var date2 = date.getFullYear() + "-" + this.fixNumber(date.getMonth() + 1) + "-" + this.fixNumber(date.getDate())
+    this.timeInterval = [date1, date2]
+    await this.$axios.post('/server/order/canteen/get/time/orders', [sessionStorage.getItem("canteenID"), date1, date2]).then(re => {
+      this.timeData = re.data;
     })
-    await this.$axios.post('/server/order/canteen/get/cash/orders',[sessionStorage.getItem("canteenID"),date1,date2]).then(re=>{
-      this.cashData=re.data;
+    await this.$axios.post('/server/order/canteen/get/cash/orders', [sessionStorage.getItem("canteenID"), date1, date2]).then(re => {
+      this.cashData = re.data;
     })
-    await this.$axios.post('/server/order/canteen/get/type/orders',[sessionStorage.getItem("canteenID"),date1,date2]).then(re=>{
-      this.typeData=re.data;
+    await this.$axios.post('/server/order/canteen/get/type/orders', [sessionStorage.getItem("canteenID"), date1, date2]).then(re => {
+      this.typeData = re.data;
     })
   },
   data(){
