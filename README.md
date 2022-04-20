@@ -19,7 +19,7 @@ Group_Progrem
    Modify the database information to your own.<br>
    
   ### Step 3
-    Run the server code<br>
+   Run the server code<br>
     
 ## Browser
 
