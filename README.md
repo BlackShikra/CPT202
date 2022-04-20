@@ -12,9 +12,9 @@ Group_Progrem
   ### Step 2
    Open **yummyServer** in IDEA and link to database. Then modify the following code.
    ~~~
-   spring.datasource.url=jdbc:mysql://localhost:3306/yummy?serverTimezone=UTC
-   spring.datasource.username=root
-   spring.datasource.password=
+   spring.datasource.url=jdbc:mysql://localhost:3306/#your_database_name#?serverTimezone=UTC
+   spring.datasource.username=#database_username#
+   spring.datasource.password=#database_password#
    ~~~
    Modify the database information to your own.<br>
    
