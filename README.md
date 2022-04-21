@@ -26,8 +26,7 @@ Group_Progrem
   Open **YummyBrowser** in WebStorm.<br>
   
   ### Build Setup
-
-  ``` bash
+  ~~~
   # install dependencies
   npm install
 
@@ -36,3 +35,16 @@ Group_Progrem
 
   # build for production with minification
   npm run build
+  ~~~
+  
+  ### Default available account
+  You can find the set up account in the database. Here are two of them.<br>
+   #### Customer 
+    Username:shixu@163.com
+    Password:shixu
+  
+   #### Canteen
+    Username:1
+    Password:zhenhuan
+    
+  
