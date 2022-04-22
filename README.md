@@ -40,8 +40,8 @@ Group_Progrem
   ### Default available account
   You can find the set up account in the database. Here are two of them.<br>
    #### Customer 
-    Username:shixu@163.com
-    Password:shixu
+    Username:shichu@163.com
+    Password:shichu
   
    #### Canteen
     Username:1
