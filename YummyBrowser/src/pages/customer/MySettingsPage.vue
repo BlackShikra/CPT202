@@ -4,7 +4,7 @@
    <div style="text-align: left;padding-left: 15%;padding-right: 15%">
      <ButtonGroup style="margin-top: 10px;margin-bottom: 10px">
        <Button type="success" class="selectButton" @click="changePage(1)">编 辑 信 息</Button>
-<!--       <Button type="warning" class="selectButton" @click="changePage(2)">充 值 会 员</Button>-->
+       <Button type="warning" class="selectButton" @click="changePage(2)">充 值 会 员</Button>
        <Button type="error" class="selectButton" @click="changePage(3)">用 户 注 销</Button>
      </ButtonGroup>
      <div v-if="show1" style="background-color: #f8f8f9;padding-left: 5%;padding-right: 5%;margin-bottom: 30px">

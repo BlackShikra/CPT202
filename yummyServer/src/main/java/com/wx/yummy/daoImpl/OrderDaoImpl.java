@@ -55,7 +55,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public int updateOrder(OrderInfo info) {
-        String sql="update orders set customerID=?, canteenID=?, timeBegin=?, state=?, destination=?, dishSum=?, deliverySum=?, dishes=?, groups=?, deliveryID=?, cancel=?, discountSum=? where oid=?";
+        String sql="update orders set customerID=?, canteenID=?, timeBegin=?, state=?, destination=?, dishSum=?, deliverySum=?, dishes=?, 'groups'=?, deliveryID=?, cancel=?, discountSum=? where oid=?";
         template.update(sql,info.getCustomerID(),info.getCanteenID(),DateFormat.getFormatDate(info.getValidTimeBegin()),info.getState().name(),info.getDestination(),info.getDishSum(),info.getDeliverySum(),getDishIDStr(info.getOrderedDishes().getDishes()),getGroupIDStr(info.getOrderedDishes().getDiscounts()),info.getDeliveryID(),info.getCancelState().name(),info.getDiscountSum(),info.getOrderID());
         return info.getOrderID();
     }

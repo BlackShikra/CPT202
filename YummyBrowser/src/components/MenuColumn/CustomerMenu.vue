@@ -31,7 +31,7 @@
         <p>{{credits}}</p>
       </div>
       <div style="font-size: 20px;font-weight: bold" id="deliverPrice">
-        <p>会有等级</p>
+        <p>会员等级</p>
         <p>{{rank}}</p>
       </div>
     </div>
