@@ -9,6 +9,10 @@ import DisplayCanteenInfoPage from '@/pages/canteen/DisplayCanteenInfoPage'
 import SearchFoodPage from '@/pages/customer/SearchFoodPage'
 import MyOrderPage from '@/pages/customer/MyOrderPage'
 import MySettingsPage from '@/pages/customer/MySettingsPage'
+import CheckCanteenPage from '@/pages/manager/CheckCanteenPage'
+import PayCanteenPage from '@/pages/manager/PayCanteenPage'
+import ViewStatisticsPage from '@/pages/manager/ViewStatisticsPage'
+
 import test from '@/pages/Test'
 
 Vue.use(Router)
@@ -60,18 +64,34 @@ export default new Router({
       component:MyOrderPage
     },
     {
-      path:'/customer/settings',
-      name:'MySettingsPage',
-      component:MySettingsPage
+      path: '/customer/settings',
+      name: 'MySettingsPage',
+      component: MySettingsPage
     },
     {
-      path:'',
+      path: '',
       name: 'LoginPage',
       component: LoginPage
     },
     {
-      path:'/test',
-      name:'Test',
+      path: '/manager/check',
+      name: 'CheckCanteenPage',
+      component: CheckCanteenPage
+    },
+    {
+      path: '/manager/pay',
+      name: 'PayCanteenPage',
+      component: PayCanteenPage
+    },
+    {
+      path: '/manager/statistics',
+      name: 'ViewStatisticsPage',
+      component: ViewStatisticsPage
+    },
+
+    {
+      path: '/test',
+      name: 'Test',
       component: test
     }
   ]
